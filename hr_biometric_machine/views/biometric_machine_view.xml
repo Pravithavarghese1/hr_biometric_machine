@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_biometric_machine_form" model="ir.ui.view">
+		<field name="name">biometric.machine.form</field>
+		<field name="model">biometric.machine</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+		<form string="Biometric Machine" version="7.0">
+			<sheet>
+				<div class="oe_left">
+					<h1>
+						<field name="name" required="1" placeholder="Machine IP"/>
+					</h1>
+				</div>
+				<div class="oe_right oe_button_box">
+					<!-- <button name="clear_attendance" string="Clear Data" class="oe_stat_button" icon="fa-remove " confirm="Are you sure you want to do this?" type="object"/> -->
+					<button name="download_attendance"  string="Download Data" class="oe_stat_button" icon="fa-download " type="object" confirm="Are you sure you want to do this?" />
+				</div>
+				<br/><br/><br/>
+				<group col="4"  colspan="4"> 
+					<field name="port" required="1"/>
+					<field name="ref_name" required="1"/>
+				    <field name="address_id"/>
+					<field name="company_id"/>
+				</group>
+			</sheet>
+		</form>
+		</field>
+	</record>
+
+	<record id="view_biometric_machine_tree" model="ir.ui.view">
+		<field name="name">biometric.machine.tree</field>
+		<field name="model">biometric.machine</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Biometric Machine" version="7.0">
+				<field name="name"/>
+				<field name="ref_name"/>
+				<field name="address_id"/>
+				<field name="company_id"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="open_view_attendance_machine" model="ir.actions.act_window">
+            <field name="name">Attendances</field>
+            <field name="res_model">biometric.machine</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+	
+		
+		
+	
+	<menuitem id="id_add_bio_machine" parent="hr.menu_hr_root" sequence="15" name="Biometric Device Manager" />	
+
+    <menuitem id="id_add_bio_machine_new" parent="id_add_bio_machine"  name="Attendance Machine" action="open_view_attendance_machine" />	
+	
+	
+		<record id="view_custom_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field eval="47" name="priority"/>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+            	 <xpath expr="/form/sheet/div[@class='oe_title']"  position='replace'>
+                      <div class="oe_title">
+                          <label for="emp_code" />
+                          <h1><field name="emp_code" required="1"/></h1>
+                          <label for="name" />
+                          <h2><field name="name" string="Name"/></h2>
+                          <label for="category" />
+                          <field name="category" />
+                          <newline/>
+                          <field name="category_ids" widget="many2many_tags" placeholder="e.g. STAFF,WORKER" groups="base.group_hr_user" invisible="1"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        
+    <record id="view_attendance_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="emp_code" required="1"/>
+                </xpath>
+        </field>
+    </record>
+	
+	<record id="hr_attendance_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.attendance.form.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="emp_code" required="1"/>
+                </xpath>
+            </field>
+        </record>
+	
+        
+     </data>
+</openerp>
