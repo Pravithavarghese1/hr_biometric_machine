@@ -35,12 +35,4 @@ Goto Employees --> Biometric Device Manager --> Attendance Machine
     field_name: ref_name
     input_value: write your location where biometric device is installed
 
-      field_name: name
-      input_value: 192.168.0.201
-
-      field_name: port
-      input_value: 4370
-
-      field_name: ref_name
-      input_value: write your location where biometric device is installed
 
