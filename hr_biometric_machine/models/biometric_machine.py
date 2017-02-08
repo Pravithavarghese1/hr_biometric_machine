@@ -145,7 +145,8 @@ class biometric_machine(models.Model):
                                             if get_user_id:
                                                 data = hr_attendance.create({'employee_id': get_user_id.id,'emp_code':lattendance[0],'check_in':atten_time})
                                     else:
-                                        pass
+                                        employee = self.env['hr.employee'].create({'emp_code':str(lattendance[0]), 'name':data_user[uid][1]})
+                                        data = hr_attendance.create({'employee_id': employee.id,'emp_code':lattendance[0],'check_in':atten_time})
                                 else:
                                     pass
                                 
