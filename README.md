@@ -11,16 +11,10 @@ Install Python ZKLib
     sudo easy_install zklib 
     or
     sudo pip install zklib
-
-Install  Python ZKLib
-
-      Download from https://pypi.python.org/pypi/zklib/0.1.1
-      or 
-      sudo easy_install zklib 
-      or
-      sudo pip install zklib
-
+    
 Install hr_biometric_machine
+    
+    The module depends on : 'base_setup', 'hr', 'hr_attendance'
 
 BIOMETRIC MACHINE CONFIGURATION:
 
