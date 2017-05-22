@@ -19,11 +19,7 @@ Downloads the logs of each employee from the fingerprint machine with their deta
     'version': '0.1',
 
 
-<<<<<<< HEAD
     'depends': ['base_setup', 'hr', 'hr_attendance',],
-=======
-    'depends': ['base_setup', 'hr'],
->>>>>>> 906ebbdc1408c6890b79e764b16fac8283ef77f8
 
 
     'data': [

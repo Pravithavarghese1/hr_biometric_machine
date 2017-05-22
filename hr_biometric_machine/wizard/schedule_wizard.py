@@ -10,7 +10,6 @@ class configure_attendence(models.TransientModel):
     
     interval_number = fields.Integer(string="Interval Number")
     interval_type = fields.Selection([('minutes','Minutes'),('hours','Hours'),('work_days','Work Days'),('days','Days'),('weeks','Weeks'),('months','Months')],string="Interval Unit")
-<<<<<<< HEAD
     
     @api.multi
     def _get_interval_number(self,cr, uid, context):
@@ -18,13 +17,6 @@ class configure_attendence(models.TransientModel):
         return self.pool.get('ir.cron').browse(cr,uid,line_id).interval_number
     
     @api.multi
-=======
-
-    def _get_interval_number(self,cr, uid, context):
-        line_id = self.pool.get('ir.cron').search(cr,uid,[('name','ilike','Download Attendence')])
-        return self.pool.get('ir.cron').browse(cr,uid,line_id).interval_number
-
->>>>>>> 906ebbdc1408c6890b79e764b16fac8283ef77f8
     def _get_interval_type(self,cr, uid, context):
         line_id = self.pool.get('ir.cron').search(cr,uid,[('name','ilike','Download Attendence')])
         return self.pool.get('ir.cron').browse(cr,uid,line_id).interval_type
@@ -34,12 +26,8 @@ class configure_attendence(models.TransientModel):
         'interval_number': _get_interval_number,
         'interval_type': _get_interval_type
     }
-<<<<<<< HEAD
     
     @api.multi
-=======
-
->>>>>>> 906ebbdc1408c6890b79e764b16fac8283ef77f8
     def update_interval(self,cr,uid,ids,context):
  
         for line in self.browse(cr,uid,ids):
