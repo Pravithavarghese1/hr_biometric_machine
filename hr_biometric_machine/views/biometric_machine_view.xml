@@ -53,7 +53,7 @@
 		
 		
 	
-	<menuitem id="id_add_bio_machine" parent="hr.menu_hr_root" sequence="15" name="Biometric Device Manager" />	
+	<menuitem id="id_add_bio_machine" parent="hr_attendance.menu_hr_attendance_root" sequence="15" name="Biometric Device Manager" />	
 
     <menuitem id="id_add_bio_machine_new" parent="id_add_bio_machine"  name="Attendance Machine" action="open_view_attendance_machine" />	
 	

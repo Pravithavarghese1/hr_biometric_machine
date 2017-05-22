@@ -18,8 +18,7 @@ Downloads the logs of each employee from the fingerprint machine with their deta
     'category': 'Human Resources Custom',
     'version': '0.1',
 
-
-    'depends': ['base_setup', 'hr'],
+    'depends': ['base_setup', 'hr', 'hr_attendance',],
 
 
     'data': [
