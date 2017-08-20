@@ -30,9 +30,9 @@ Downloads the logs of each employee from the fingerprint machine with their deta
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    #'demo': [
+    #    'demo/demo.xml',
+  #  ],
     'installable': True,
     'application': True,
     'auto_install': False,
