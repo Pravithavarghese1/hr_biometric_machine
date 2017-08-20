@@ -14,7 +14,7 @@ Downloads the logs of each employee from the fingerprint machine with their deta
     """,
 
     'author': "Pravitha V",
-    'website': "pravitha.wordpress.com",
+    'website': "https://www.odoo.com/",
     'category': 'Human Resources Custom',
     'version': '0.1',
 
