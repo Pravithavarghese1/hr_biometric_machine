@@ -142,10 +142,10 @@ class biometric_machine(models.Model):
                     zk.disconnect()
                     return True
                 else:
-                    raise ValidationError(_('Warning !'), _("Unable to get the attendance log, please try again later."))
+                    raise UserError(_('Unable to get the attendance log, please try again later.'))   
             else:
-                raise ValidationError(_('Warning !'), _("Unable to connect, please check the parameters and network connections."))
-
+                raise UserError(_('Unable to connect, please check the parameters and network connections.'))
+                
     # Dowload attendence data regularly
     @api.multi
     def schedule_download(self, ids=None):
