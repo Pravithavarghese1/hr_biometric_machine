@@ -6,7 +6,7 @@ import time
 from odoo import models, fields, api
 from odoo import api, fields, models
 from odoo import tools, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, AccessError, ValidationError
 from odoo.modules.module import get_module_resource
 from datetime import datetime, timedelta
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
