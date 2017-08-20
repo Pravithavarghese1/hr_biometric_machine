@@ -32,7 +32,7 @@ Downloads the logs of each employee from the fingerprint machine with their deta
     # only loaded in demonstration mode
     #'demo': [
     #    'demo/demo.xml',
-  #  ],
+   #  ],
     'installable': True,
     'application': True,
     'auto_install': False,
